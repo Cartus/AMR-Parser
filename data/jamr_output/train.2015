@@ -1,0 +1,160 @@
+# ::id:0
+# ::snt Establishing Models in Industrial Innovation
+# ::save-date Wed Oct 30, 2013 ::file bolt12_07_4800_1.txt
+# ::tok Establishing Models in Industrial Innovation
+# ::alignments 0-1|0 1-2|0.0 4-5|0.0.0 3-4|0.0.0.0 ::annotator Aligner v.03 ::date 2018-11-14T12:33:59.475
+# ::node	0	establish-01	0-1
+# ::node	0.0	model	1-2
+# ::node	0.0.0	innovate-01	4-5
+# ::node	0.0.0.0	industry	3-4
+# ::root	0	establish-01
+# ::edge	establish-01	ARG1	model	0	0.0	
+# ::edge	innovate-01	ARG1	industry	0.0.0	0.0.0.0	
+# ::edge	model	mod	innovate-01	0.0	0.0.0	
+(e / establish-01
+  :ARG1 (m / model
+          :mod (i / innovate-01
+                 :ARG1 (i2 / industry))))
+
+# ::id:1
+# ::snt After its competitor invented the front loading washing machine, the CEO of the American IM company believed that each of its employees had the ability for innovation , and formulated strategic countermeasures for innovation in the industry.
+# ::save-date Tue Apr 14, 2015 ::file bolt12_07_4800_2.txt
+# ::tok After its competitor invented the front loading washing machine , the CEO of the American IM company believed that each of its employees had the ability for innovation , and formulated strategic countermeasures for innovation in the industry .
+# ::alignments 15-16|0.0.0+0.0.0.0+0.0.0.0.0+0.0.0.0.0.0+0.0.0.0.0.0.0 29-30|0 0-1|0.2 3-4|0.2.0 8-9|0.2.0.1 6-7|0.2.0.1.1 5-6|0.2.0.1.1.0 7-8|0.2.0.1.0 16-17|0.2.0.0 30-31|0.1 32-33|0.1.1 37-38|0.1.1.1.0 11-12|0.1.0 17-18|0.0 19-20|0.0.1.0.1 2-3|0.2.0.0.0 27-28|0.1.1.1 31-32|0.1.1.0 22-23|0.0.1.0+0.0.1.0.0 34-35|0.0.1.1 ::annotator Aligner v.03 ::date 2018-11-14T12:33:59.605
+# ::node	0	and	29-30
+# ::node	0.0	believe-01	17-18
+# ::node	0.0.0	person	15-16
+# ::node	0.0.0.0	have-org-role-91	15-16
+# ::node	0.0.0.0.0	company	15-16
+# ::node	0.0.0.0.0.0	name	15-16
+# ::node	0.0.0.0.0.0.0	"IM"	15-16
+# ::node	0.0.0.0.0.1	country	
+# ::node	0.0.0.0.0.1.0	name	
+# ::node	0.0.0.0.0.1.0.0	"United"	
+# ::node	0.0.0.0.0.1.0.1	"States"	
+# ::node	0.0.0.0.1	CEO	
+# ::node	0.0.1	capable-01	
+# ::node	0.0.1.0	person	22-23
+# ::node	0.0.1.0.0	employ-01	22-23
+# ::node	0.0.1.0.1	each	19-20
+# ::node	0.0.1.1	innovate-01	34-35
+# ::node	0.1	formulate-01	30-31
+# ::node	0.1.0	ceo	11-12
+# ::node	0.1.1	countermeasure	32-33
+# ::node	0.1.1.0	strategy	31-32
+# ::node	0.1.1.1	innovate-01	27-28
+# ::node	0.1.1.1.0	industry	37-38
+# ::node	0.2	after	0-1
+# ::node	0.2.0	invent-01	3-4
+# ::node	0.2.0.0	company	16-17
+# ::node	0.2.0.0.0	compete-02	2-3
+# ::node	0.2.0.1	machine	8-9
+# ::node	0.2.0.1.0	wash-01	7-8
+# ::node	0.2.0.1.1	load-01	6-7
+# ::node	0.2.0.1.1.0	front	5-6
+# ::root	0	and
+# ::edge	after	op1	invent-01	0.2	0.2.0	
+# ::edge	and	op1	believe-01	0	0.0	
+# ::edge	and	op2	formulate-01	0	0.1	
+# ::edge	and	time	after	0	0.2	
+# ::edge	believe-01	ARG0	person	0.0	0.0.0	
+# ::edge	believe-01	ARG1	capable-01	0.0	0.0.1	
+# ::edge	capable-01	ARG1	person	0.0.1	0.0.1.0	
+# ::edge	capable-01	ARG2	innovate-01	0.0.1	0.0.1.1	
+# ::edge	company	ARG0-of	compete-02	0.2.0.0	0.2.0.0.0	
+# ::edge	company	mod	country	0.0.0.0.0	0.0.0.0.0.1	
+# ::edge	company	name	name	0.0.0.0.0	0.0.0.0.0.0	
+# ::edge	compete-02	ARG1	company	0.2.0.0.0	0.0.0.0.0	
+# ::edge	countermeasure	mod	strategy	0.1.1	0.1.1.0	
+# ::edge	countermeasure	purpose	innovate-01	0.1.1	0.1.1.1	
+# ::edge	country	name	name	0.0.0.0.0.1	0.0.0.0.0.1.0	
+# ::edge	employ-01	ARG0	company	0.0.1.0.0	0.0.0.0.0	
+# ::edge	formulate-01	ARG0	ceo	0.1	0.1.0	
+# ::edge	formulate-01	ARG1	countermeasure	0.1	0.1.1	
+# ::edge	have-org-role-91	ARG1	company	0.0.0.0	0.0.0.0.0	
+# ::edge	have-org-role-91	ARG2	CEO	0.0.0.0	0.0.0.0.1	
+# ::edge	innovate-01	ARG0	person	0.0.1.1	0.0.1.0	
+# ::edge	innovate-01	prep-in	industry	0.1.1.1	0.1.1.1.0	
+# ::edge	invent-01	ARG0	company	0.2.0	0.2.0.0	
+# ::edge	invent-01	ARG1	machine	0.2.0	0.2.0.1	
+# ::edge	load-01	mod	front	0.2.0.1.1	0.2.0.1.1.0	
+# ::edge	machine	ARG0-of	wash-01	0.2.0.1	0.2.0.1.0	
+# ::edge	machine	ARG1-of	load-01	0.2.0.1	0.2.0.1.1	
+# ::edge	name	op1	"IM"	0.0.0.0.0.0	0.0.0.0.0.0.0	
+# ::edge	name	op1	"United"	0.0.0.0.0.1.0	0.0.0.0.0.1.0.0	
+# ::edge	name	op2	"States"	0.0.0.0.0.1.0	0.0.0.0.0.1.0.1	
+# ::edge	person	ARG0-of	have-org-role-91	0.0.0	0.0.0.0	
+# ::edge	person	ARG1-of	employ-01	0.0.1.0	0.0.1.0.0	
+# ::edge	person	mod	each	0.0.1.0	0.0.1.0.1	
+(a / and
+      :op1 (b / believe-01
+            :ARG0 (p2 / person
+                  :ARG0-of (h2 / have-org-role-91
+                        :ARG1 (c2 / company :name (n / name :op1 "IM") 
+                              :mod (c3 / country :name (n2 / name :op1 "United" :op2 "States"))) 
+                        :ARG2 (c7 / CEO)))
+            :ARG1 (c8 / capable-01
+                  :ARG1 (p / person
+                        :ARG1-of (e / employ-01
+                              :ARG0 c2)
+                        :mod (e2 / each))
+                  :ARG2 (i / innovate-01
+                        :ARG0 p)))
+      :op2 (f / formulate-01
+            :ARG0 (c / ceo)
+            :ARG1 (c4 / countermeasure
+                  :mod (s / strategy)
+                  :purpose (i2 / innovate-01
+                        :prep-in (i3 / industry))))
+      :time (a3 / after
+            :op1 (i4 / invent-01
+                  :ARG0 (c5 / company
+                        :ARG0-of (c6 / compete-02
+                              :ARG1 c2))
+                  :ARG1 (m / machine
+                        :ARG0-of (w / wash-01)
+                        :ARG1-of (l / load-01
+                              :mod (f2 / front))))))
+
+# ::id:2
+# ::snt 1. Establish an innovation fund with a maximum amount of 1,000 U.S. dollars.
+# ::save-date Thu Jan 9, 2014 ::file bolt12_07_4800_3.txt
+# ::tok 1. Establish an innovation fund with a maximum amount of 1,000 U.S. dollars .
+# ::alignments 1-2|0 4-5|0.0 8-9|0.0.1 7-8|0.0.1.0 12-13|0.0.1.0.0+0.0.1.0.0.1 3-4|0.0.0 11-12|0.0.1.0.0.1.0+0.0.1.0.0.1.0.0+0.0.1.0.0.1.0.0.0+0.0.1.0.0.1.0.0.1 ::annotator Aligner v.03 ::date 2018-11-14T12:33:59.632
+# ::node	0	establish-01	1-2
+# ::node	0.0	fund	4-5
+# ::node	0.0.0	innovate-01	3-4
+# ::node	0.0.1	amount-01	8-9
+# ::node	0.0.1.0	maximum	7-8
+# ::node	0.0.1.0.0	monetary-quantity	12-13
+# ::node	0.0.1.0.0.0	1000	
+# ::node	0.0.1.0.0.1	dollar	12-13
+# ::node	0.0.1.0.0.1.0	country	11-12
+# ::node	0.0.1.0.0.1.0.0	name	11-12
+# ::node	0.0.1.0.0.1.0.0.0	"United"	11-12
+# ::node	0.0.1.0.0.1.0.0.1	"States"	11-12
+# ::node	0.1	1	
+# ::root	0	establish-01
+# ::edge	amount-01	ARG2	maximum	0.0.1	0.0.1.0	
+# ::edge	country	name	name	0.0.1.0.0.1.0	0.0.1.0.0.1.0.0	
+# ::edge	dollar	mod	country	0.0.1.0.0.1	0.0.1.0.0.1.0	
+# ::edge	establish-01	ARG1	fund	0	0.0	
+# ::edge	establish-01	li	1	0	0.1	
+# ::edge	fund	ARG1-of	amount-01	0.0	0.0.1	
+# ::edge	fund	purpose	innovate-01	0.0	0.0.0	
+# ::edge	maximum	op1	monetary-quantity	0.0.1.0	0.0.1.0.0	
+# ::edge	monetary-quantity	quant	1000	0.0.1.0.0	0.0.1.0.0.0	
+# ::edge	monetary-quantity	unit	dollar	0.0.1.0.0	0.0.1.0.0.1	
+# ::edge	name	op1	"United"	0.0.1.0.0.1.0.0	0.0.1.0.0.1.0.0.0	
+# ::edge	name	op2	"States"	0.0.1.0.0.1.0.0	0.0.1.0.0.1.0.0.1	
+(e / establish-01
+      :ARG1 (f2 / fund
+            :purpose (i / innovate-01)
+            :ARG1-of (a / amount-01
+                  :ARG2 (m2 / maximum
+                        :op1 (m / monetary-quantity :quant 1000
+                              :unit (d / dollar
+                                    :mod (c / country 
+                                          :name (n / name :op1 "United" :op2 "States")))))))
+      :li (x / 1))
+

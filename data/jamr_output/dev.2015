@@ -1,0 +1,70 @@
+# ::id:0
+# ::snt There are many who have a sense of urgency, quietly watching how things develop,you are dragons coiling, you are tigers crouching, I admire noble-minded patriots.
+# ::save-date Fri Jul 24, 2015 ::file bolt12_64545_0526_1.txt
+# ::tok There are many who have a sense of urgency , quietly watching how things develop , you are dragons coiling , you are tigers crouching , I admire noble - minded patriots .
+# ::alignments 2-3|0.0 6-7|0.0.0 11-12|0.0.0.1 13-14|0.0.0.1.0 14-15|0.0.0.1.0.0 8-9|0.0.0.0 18-19|0.1 19-20|0.1.1 16-17|0.1.0 23-24|0.2 24-25|0.2.1 21-22|0.2.0 27-28|0.3 31-32|0.3.1 30-31|0.3.1.0 28-29|0.3.1.0.0 26-27|0.3.0 10-11|0.0.0.1.1 ::annotator Aligner v.03 ::date 2018-10-25T17:28:19.163
+# ::node	0	multi-sentence	
+# ::node	0.0	many	2-3
+# ::node	0.0.0	sense-01	6-7
+# ::node	0.0.0.0	urgency	8-9
+# ::node	0.0.0.1	watch-01	11-12
+# ::node	0.0.0.1.0	thing	13-14
+# ::node	0.0.0.1.0.0	develop-02	14-15
+# ::node	0.0.0.1.0.0.0	thing	
+# ::node	0.0.0.1.1	quiet-04	10-11
+# ::node	0.1	dragon	18-19
+# ::node	0.1.0	you	16-17
+# ::node	0.1.1	coil-01	19-20
+# ::node	0.2	tiger	23-24
+# ::node	0.2.0	you	21-22
+# ::node	0.2.1	crouch-01	24-25
+# ::node	0.3	admire-01	27-28
+# ::node	0.3.0	i	26-27
+# ::node	0.3.1	patriot	31-32
+# ::node	0.3.1.0	mind-04	30-31
+# ::node	0.3.1.0.0	noble	28-29
+# ::root	0	multi-sentence
+# ::edge	admire-01	ARG0	i	0.3	0.3.0	
+# ::edge	admire-01	ARG1	patriot	0.3	0.3.1	
+# ::edge	develop-02	ARG0	thing	0.0.0.1.0.0	0.0.0.1.0.0.0	
+# ::edge	dragon	ARG0-of	coil-01	0.1	0.1.1	
+# ::edge	dragon	domain	you	0.1	0.1.0	
+# ::edge	many	ARG0-of	sense-01	0.0	0.0.0	
+# ::edge	mind-04	mod	noble	0.3.1.0	0.3.1.0.0	
+# ::edge	multi-sentence	snt1	many	0	0.0	
+# ::edge	multi-sentence	snt2	dragon	0	0.1	
+# ::edge	multi-sentence	snt3	tiger	0	0.2	
+# ::edge	multi-sentence	snt4	admire-01	0	0.3	
+# ::edge	patriot	ARG0-of	mind-04	0.3.1	0.3.1.0	
+# ::edge	quiet-04	ARG1	many	0.0.0.1.1	0.0	
+# ::edge	sense-01	ARG1	urgency	0.0.0	0.0.0.0	
+# ::edge	sense-01	time	watch-01	0.0.0	0.0.0.1	
+# ::edge	thing	manner-of	develop-02	0.0.0.1.0	0.0.0.1.0.0	
+# ::edge	tiger	ARG0-of	crouch-01	0.2	0.2.1	
+# ::edge	tiger	domain	you	0.2	0.2.0	
+# ::edge	watch-01	ARG0	many	0.0.0.1	0.0	
+# ::edge	watch-01	ARG1	thing	0.0.0.1	0.0.0.1.0	
+# ::edge	watch-01	manner	quiet-04	0.0.0.1	0.0.0.1.1	
+(m / multi-sentence
+      :snt1 (m2 / many
+            :ARG0-of (s / sense-01
+                  :ARG1 (u / urgency)
+                  :time (w / watch-01
+                        :ARG0 m2
+                        :ARG1 (t3 / thing
+                              :manner-of (d / develop-02
+                                    :ARG0 (t / thing)))
+                        :manner (q / quiet-04
+                              :ARG1 m2))))
+      :snt2 (d2 / dragon
+            :domain (y / you)
+            :ARG0-of (c / coil-01))
+      :snt3 (t2 / tiger
+            :domain (y2 / you)
+            :ARG0-of (c2 / crouch-01))
+      :snt4 (a / admire-01
+            :ARG0 (i / i)
+            :ARG1 (p / patriot
+                  :ARG0-of (m3 / mind-04
+                        :mod (n / noble)))))
+

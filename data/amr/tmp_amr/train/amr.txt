@@ -1,0 +1,55 @@
+# ::id:0
+# ::snt Establishing Models in Industrial Innovation
+# ::save-date Wed Oct 30, 2013 ::file bolt12_07_4800_1.txt
+(e / establish-01
+  :ARG1 (m / model
+          :mod (i / innovate-01
+                 :ARG1 (i2 / industry))))
+
+# ::id:1
+# ::snt After its competitor invented the front loading washing machine, the CEO of the American IM company believed that each of its employees had the ability for innovation , and formulated strategic countermeasures for innovation in the industry.
+# ::save-date Tue Apr 14, 2015 ::file bolt12_07_4800_2.txt
+(a / and
+      :op1 (b / believe-01
+            :ARG0 (p2 / person
+                  :ARG0-of (h2 / have-org-role-91
+                        :ARG1 (c2 / company :name (n / name :op1 "IM") 
+                              :mod (c3 / country :name (n2 / name :op1 "United" :op2 "States"))) 
+                        :ARG2 (c7 / CEO)))
+            :ARG1 (c8 / capable-01
+                  :ARG1 (p / person
+                        :ARG1-of (e / employ-01
+                              :ARG0 c2)
+                        :mod (e2 / each))
+                  :ARG2 (i / innovate-01
+                        :ARG0 p)))
+      :op2 (f / formulate-01
+            :ARG0 (c / ceo)
+            :ARG1 (c4 / countermeasure
+                  :mod (s / strategy)
+                  :purpose (i2 / innovate-01
+                        :prep-in (i3 / industry))))
+      :time (a3 / after
+            :op1 (i4 / invent-01
+                  :ARG0 (c5 / company
+                        :ARG0-of (c6 / compete-02
+                              :ARG1 c2))
+                  :ARG1 (m / machine
+                        :ARG0-of (w / wash-01)
+                        :ARG1-of (l / load-01
+                              :mod (f2 / front))))))
+
+# ::id:2
+# ::snt 1. Establish an innovation fund with a maximum amount of 1,000 U.S. dollars.
+# ::save-date Thu Jan 9, 2014 ::file bolt12_07_4800_3.txt
+(e / establish-01
+      :ARG1 (f2 / fund
+            :purpose (i / innovate-01)
+            :ARG1-of (a / amount-01
+                  :ARG2 (m2 / maximum
+                        :op1 (m / monetary-quantity :quant 1000
+                              :unit (d / dollar
+                                    :mod (c / country 
+                                          :name (n / name :op1 "United" :op2 "States")))))))
+      :li (x / 1))
+

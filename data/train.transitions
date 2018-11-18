@@ -1,0 +1,23 @@
+
+Establishing`VBG`Establishing, Models`NNS`Models, in`IN`in, Industrial`NNP`Industrial, Innovation`NNP`Innovation, ROOT`NOTAG`ROOT
+PR(establish-01)
+SS
+PR(model)
+SR(ARG1)
+SS
+SS
+PR(industry)
+MR
+SS
+PR(innovate-01)
+SL(ARG1)
+MR
+SR(mod)
+MR
+SS
+PR(ROOT)
+MR
+SL(root)
+MR
+SS
+MR
