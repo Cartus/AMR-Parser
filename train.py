@@ -48,11 +48,9 @@ def parsing_options():
     parser.add_argument('--drop_out', type=float, default=0.2, help='dropout ratio')
     parser.add_argument('--unk_prob', type=float, default=0.2, help='probably with which to replace singletons with UNK in training data')
     parser.add_argument('--freq', type=int, default=1000, help='frequence of calculating the Smatch score of the dev set')
-    parser.add_argument('--best_smatch', type=float, default=0, help='threshold to save the model') # For AMR-2014 corpus
+    parser.add_argument('--best_smatch', type=float, default=0.6, help='threshold to save the model')
 
-    args = ["--train_file", "data/train.transitions", "--lemma_practs", "data/train.txt.pb.lemmas", "--dev_file", "data/test.transitions", "--gold_AMR_dev", "data/amr/tmp_amr/test/amr.txt", '--emb_file', "data/sskip.100.vectors"]
-
-    args = parser.parse_args(args)
+    args = parser.parse_args()
 
     return args
 
@@ -167,7 +165,7 @@ def train(corpus, args, parser, gold_amr_dev):
             instances_processed += 1
 
             if e < 10:
-                if instances_processed % 1000 == 0:
+                if instances_processed % 5000 == 0:
                     evaluation_dev(corpus, parser, args.best_smatch, e, gold_amr_dev)
             elif e >= 10:
                 if instances_processed % args.freq == 0:

@@ -38,7 +38,9 @@ Aftering running the script, you can find preprocessed AMR files under the amr/t
 scripts/ALIGN.sh < amr.txt > train.2014
 ```
 
-We need to get the aligned files for train, dev and test amr files. Then we put three aligned files into one folder called jamr_ouput inside the data folder. Before runing the hybrid aligner, we also need to specify two directories: **REPO_DIR** and **JAMR_FILE**. **JAMR_FILE** refers to the output of the JAMR aligner. Here is train.2014. Then we run the bash script to get the transition sequences for training the AMR parser:
+We need to get the aligned files for train, dev and test amr files. Then we put three aligned files into one folder called jamr_ouput inside the data folder. Before runing the hybrid aligner, we also need to specify two directories: **REPO_DIR** and **JAMR_FILE**. **JAMR_FILE** refers to the output of the JAMR aligner. Here is train.2014. 
+
+Our hybrid aligner also requires the MGIZA++. Download and install MGIZA++ under the data folder. The code of unsupervised aligning is adapted from this [repository](https://github.com/melanietosik/string-to-amr-alignment). Then you can run the bash script to get the transition sequences for training the AMR parser:
 
 ```
 ./align.sh
