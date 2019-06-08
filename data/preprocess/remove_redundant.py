@@ -1,3 +1,4 @@
+# coding=utf-8
 import sys
 
 input = sys.argv[1]
@@ -17,16 +18,41 @@ with open(output, 'w') as result_file:
             if line.startswith('# ::id'):
                 string += '# ::id:'+str(counter)+'\n'
             else:
-                if '-_-' in line:
-                    new_string = line.replace(' -_-', '.')
-                    string += new_string
-                else:
-                    string += line
+                new_string = line.replace('', ' ')
+                new_string = new_string.replace('', ' ')
+                new_string = new_string.replace('', ' ')
+                new_string = new_string.replace('', ' ')
+                new_string = new_string.replace('', ' ')
+                new_string = new_string.replace(' -_-', '.')
+                string += new_string
+                # if '-_-' in line:
+                #     new_string = line.replace(' -_-', '.')
+                #     string += new_string
+                # elif '' in line:
+                #     new_string = line.replace('', ' ')
+                #     string += new_string
+                # elif '' in line:
+                #     new_string = line.replace('', ' ')
+                #     string += new_string
+                # elif '' in line:
+                #     new_string = line.replace('', ' ')
+                #     string += new_string
+                # elif '' in line:
+                #     new_string = line.replace('', ' ')
+                #     string += new_string
+                # elif '' in line:
+                #     new_string = line.replace('', ' ')
+                #     string += new_string
+                # else:
+                #     string += line
         else:
             if line.startswith('(a / amr-empty)'):
                 string = ''
             elif '"Republican Party"' in line:
                 new_string = line.replace('"Republican Party"', '"Republican" :op2 "Party"')
+                string += new_string
+            elif '' in line:
+                new_string = line.replace('', ' ')
                 string += new_string
             elif '"Soviet Union"' in line:
                 new_string = line.replace('"Soviet Union"', '"Soviet" :op2 "Union"')

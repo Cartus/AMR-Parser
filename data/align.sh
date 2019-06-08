@@ -1,22 +1,19 @@
 #!/bin/bash
 
-# CHANGE THIS
-REPO_DIR=/home/cartus/Desktop/tbparser/data
-JAMR_FILE=${REPO_DIR}/jamr_output/train.2015
 
 # CONSTANT
-JAMR_DIR=${REPO_DIR}/jamr_output
-
+JAMR_FILE=jamr_output/train.txt
+JAMR_DIR=jamr_output
 
 # REMOVE CERTAIN EDGES
-python preprocess/remove_edges.py ${JAMR_FILE} ${REPO_DIR}/jamr.txt
+python preprocess/remove_edges.py ${JAMR_FILE} jamr.txt
 
 # REORDER JAMR FILE
-python preprocess/reorder_jamr.py ${REPO_DIR}/jamr.txt ${REPO_DIR}/jamr_rm.txt
+python preprocess/reorder_jamr.py jamr.txt jamr_rm.txt
 
 # EXTRACT SENTENCES AND GRAPH FROM THE ALIGNMENT FILE
-python preprocess/extract_pairs.py ${REPO_DIR}/jamr_rm.txt ${REPO_DIR}/sent.txt ${REPO_DIR}/unsupervised_align/eval/graph.txt
-cp ${REPO_DIR}/sent.txt unsupervised_align/eval
+python preprocess/extract_pairs.py jamr_rm.txt sent.txt unsupervised_align/eval/graph.txt
+cp sent.txt unsupervised_align/eval
 
 
 # UNSUPERVISED ALIGN
@@ -40,7 +37,7 @@ rm jamr.txt jamr_rm.txt sent.txt train.txt
 
 # DEV/TEST 
 for SPLIT in dev test; do
-    python preprocess/align2conll.py ${JAMR_DIR}/${SPLIT}.2014 ${SPLIT}.txt
+    python preprocess/align2conll.py ${JAMR_DIR}/${SPLIT}.txt ${SPLIT}.txt
     java -jar AMROracle.jar -inp ${SPLIT}.txt > ${SPLIT}.transitions
     rm ${SPLIT}.txt
     rm ${SPLIT}.txt.pb.lemmas

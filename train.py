@@ -17,15 +17,13 @@ import model.corpus as corpus
 def parsing_options():
 
     parser = argparse.ArgumentParser(description='Training transition-based AMR parser')
-    parser.add_argument('--emb_file', help='path to pre-trained embedding')
-    parser.add_argument('--train_file', help='path to training file')
-    parser.add_argument('--dev_file', help='path to development file')
-    parser.add_argument('--lemma_practs', help='lemmas mapped to PR() operations')
+    parser.add_argument('--emb_file', default='data/sskip.100.vectors', help='path to pre-trained embedding')
+    parser.add_argument('--train_file', default='data/train.transitions', help='path to training file')
+    parser.add_argument('--dev_file', default='data/dev.transitions', help='path to development file')
+    parser.add_argument('--lemma_practs', default='data/train.txt.pb.lemmas', help='lemmas mapped to PR() operations')
     parser.add_argument('--model', default='result', help='path to save pretrain model')
     parser.add_argument('--load_model', type=int, default=-1, help='set to -1 if we do not have pretrained model')
-
-    parser.add_argument('--gold_AMR_train', help='Gold AMR graph for calculating SMATCH score during training')
-    parser.add_argument('--gold_AMR_dev', help='Gold AMR graph for calculating SMATCH score during dev')
+    parser.add_argument('--gold_AMR_dev', default='data/amr/tmp_amr/dev/amr.txt', help='Gold AMR graph for calculating SMATCH score during dev')
 
     parser.add_argument('--input_dim', type=int, default=32, help='dimension for word embedding')
     parser.add_argument('--action_dim', type=int, default=200, help='dimension for action embedding')
@@ -48,7 +46,7 @@ def parsing_options():
     parser.add_argument('--drop_out', type=float, default=0.2, help='dropout ratio')
     parser.add_argument('--unk_prob', type=float, default=0.2, help='probably with which to replace singletons with UNK in training data')
     parser.add_argument('--freq', type=int, default=1000, help='frequence of calculating the Smatch score of the dev set')
-    parser.add_argument('--best_smatch', type=float, default=0.6, help='threshold to save the model')
+    parser.add_argument('--best_smatch', type=float, default=0.65, help='threshold to save the model')
 
     args = parser.parse_args()
 
@@ -87,8 +85,7 @@ def evaluation_dev(corpus, parser, best_SMATCH, e, gold_amr_dev):
     print("SMATCH score: %.4f, Precision: %.4f, Recall: %.4f" % (score_dev, precision_dev, recall_dev))
 
     if score_dev > best_SMATCH:
-        # args.best_smatch = SMATCH
-        print("Saving model...")
+         print("Saving model epoch%03d.model".format(e))
         save_as = '%s/epoch%03d.model' % (args.model, e)
         parser.save_model(save_as)
 
@@ -107,6 +104,7 @@ def train(corpus, args, parser, gold_amr_dev):
         RNG.shuffle(order)
         words = 0
         epoch_loss = 0.0
+        ckt = 0
 
         for si in range(len(order)):
 
@@ -166,10 +164,12 @@ def train(corpus, args, parser, gold_amr_dev):
 
             if e < 10:
                 if instances_processed % 5000 == 0:
-                    evaluation_dev(corpus, parser, args.best_smatch, e, gold_amr_dev)
+                    evaluation_dev(corpus, parser, args.best_smatch, ckt, gold_amr_dev)
             elif e >= 10:
                 if instances_processed % args.freq == 0:
-                    evaluation_dev(corpus, parser, args.best_smatch, e, gold_amr_dev)
+                    evaluation_dev(corpus, parser, args.best_smatch, ckt, gold_amr_dev)
+
+            ckt += 1
 
             if instances_processed % args.freq == 0 and instances_processed != 0:
                 print('epoch %d: per-word loss: %.6f' % (e, epoch_loss / words))
@@ -223,7 +223,7 @@ if __name__ == '__main__':
 
     if args.load_model >= 0:
         print("loading pretrained model")
-        parser = parser.load_model('result/epoch006.model')
+        parser.load_model('result/pretrain14.model')
         pretrained_model = True
     else:
         pretrained_model = False

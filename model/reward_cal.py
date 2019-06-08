@@ -63,11 +63,11 @@ def reward_cal(predicted, corpus, sent_string, tok_lemma_string, action_list, un
         score, precision, recall = smatch.get_reward(node_list, node_names, tokens, merge_index, gold_amr, output_file)
     except:
         print(index)
-        print(node_list)
-        print(node_names)
-        print(tokens)
-        print(merge_index)
-        print([corpus.act_dict.index_convert(act) for act in action_list])
+        # print(node_list)
+        # print(node_names)
+        # print(tokens)
+        # print(merge_index)
+        # print([corpus.act_dict.index_convert(act) for act in action_list])
         print(gold_amr)
         score = 0.0
         precision = 0.0

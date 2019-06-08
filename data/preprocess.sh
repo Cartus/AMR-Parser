@@ -1,12 +1,10 @@
 #!/bin/bash
 
-# CHANGE THIS
-REPO_DIR=/home/cartus/Desktop/tbparser
-DATA_DIR=${REPO_DIR}/data/amr
+DATA_DIR=amr
 
 # CONSTANTS
 PREPROC_DIR=${DATA_DIR}/tmp_amr
-ORIG_AMR_DIR=${DATA_DIR}/data/split
+ORIG_AMR_DIR=${DATA_DIR}/data/amrs/split
 
 #####
 # CREATE FOLDER STRUCTURE

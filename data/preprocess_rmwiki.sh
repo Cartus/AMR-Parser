@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# CHANGE THIS
-REPO_DIR=/home/cartus/Desktop/tbparser
-DATA_DIR=${REPO_DIR}/data/amr
+DATA_DIR=amr
 
 # CONSTANTS
 PREPROC_DIR=${DATA_DIR}/tmp_amr
@@ -16,11 +14,16 @@ mkdir -p ${PREPROC_DIR}/train
 mkdir -p ${PREPROC_DIR}/dev
 mkdir -p ${PREPROC_DIR}/test
 
-#####
-# CONCAT ALL SEMBANKS INTO A SINGLE ONE
+# CHANGE THIS
+# AMR2015: CONCAT ALL SEMBANKS INTO A SINGLE ONE
 cat ${ORIG_AMR_DIR}/training/deft-p2-* > ${PREPROC_DIR}/train/raw_amrs.txt
 cat ${ORIG_AMR_DIR}/dev/deft-p2-* > ${PREPROC_DIR}/dev/raw_amrs.txt
 cat ${ORIG_AMR_DIR}/test/deft-p2-* > ${PREPROC_DIR}/test/raw_amrs.txt
+
+# AMR2017: CONCAT ALL SEMBANKS INTO A SINGLE ONE
+# cat ${ORIG_AMR_DIR}/training/amr-release-2.0-* > ${PREPROC_DIR}/train/raw_amrs.txt
+# cat ${ORIG_AMR_DIR}/dev/amr-release-2.0-* > ${PREPROC_DIR}/dev/raw_amrs.txt
+# cat ${ORIG_AMR_DIR}/test/amr-release-2.0-* > ${PREPROC_DIR}/test/raw_amrs.txt
 
 # REMOVE WIKI 
 for SPLIT in train dev test; do
