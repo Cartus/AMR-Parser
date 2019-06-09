@@ -67,9 +67,9 @@ Get the AMR corpus (LDC2014T12/LDC2015E86/LDC2017T10). We can't distribute them 
 ./preprocess_17.sh
 ```
 
-Aftering running the script, you can find preprocessed AMR files under the amr/tmp_amr folder, which contains train, dev and test three folders. Before using our Hybrid Aligner, we need the output files of JAMR aligner (https://github.com/jflanigan/jamr). 
+Aftering running the script, you can find preprocessed AMR files under the amr/tmp_amr folder, which contains train, dev and test three folders. Before using our Hybrid Aligner, we need the output files of [JAMR aligner] (https://github.com/jflanigan/jamr). 
 
-After install the JAMR aligner, you can get the aligned train file simply by using :
+You can get the aligned train file simply by using the JAMR aligner:
 ```
 . scripts/config.sh
 scripts/ALIGN.sh < amr.txt > train.txt
@@ -100,6 +100,9 @@ If you want to use a pretrained parser, just put the pretrain model under the re
 ```
 python3 train.py --load_model 1 --dev_file data/test.transitions --gold_AMR_dev data/amr/tmp_amr/test/amr.txt 
 ```
+
+### Related Repo
+The code of the unsupervised aligning is adapted from this [repository](https://github.com/melanietosik/string-to-amr-alignment).
 
 ### Citation
 
