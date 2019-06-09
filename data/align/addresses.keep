@@ -1,0 +1,5 @@
+AMR=eval/graph.txt
+ENG=eval/sent.txt
+MGIZA_SCRIPT=../mgiza/mgizapp/scripts
+MGIZA_BIN=../mgiza/mgizapp/bin/
+

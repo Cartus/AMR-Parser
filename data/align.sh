@@ -12,18 +12,18 @@ python preprocess/remove_edges.py ${JAMR_FILE} jamr.txt
 python preprocess/reorder_jamr.py jamr.txt jamr_rm.txt
 
 # EXTRACT SENTENCES AND GRAPH FROM THE ALIGNMENT FILE
-python preprocess/extract_pairs.py jamr_rm.txt sent.txt unsupervised_align/eval/graph.txt
-cp sent.txt unsupervised_align/eval
+python preprocess/extract_pairs.py jamr_rm.txt sent.txt align/eval/graph.txt
+cp sent.txt align/eval
 
 
 # UNSUPERVISED ALIGN
-cd unsupervised_align
+cd align
 ./run.sh
 cd ..
 
 
 # RULE_BASED ALIGN
-python preprocess/extract_align.py unsupervised_align/AMR_Aligned.keep aligned.txt
+python preprocess/extract_align.py align/AMR_Aligned.keep aligned.txt
 python preprocess/convert_format.py aligned.txt jamr_rm.txt aligned_jamr.txt
 python preprocess/rearrange_align.py aligned_jamr.txt aligned_ra.txt
 python preprocess/entity_align.py aligned_ra.txt aligned_en.txt
