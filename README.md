@@ -67,7 +67,7 @@ Get the AMR corpus (LDC2014T12/LDC2015E86/LDC2017T10). We can't distribute them 
 ./preprocess_17.sh
 ```
 
-Aftering running the script, you can find preprocessed AMR files under the amr/tmp_amr folder, which contains train, dev and test three folders. Before using our Hybrid Aligner, we need the output files of [JAMR aligner] (https://github.com/jflanigan/jamr). 
+Aftering running the script, you can find preprocessed AMR files under the amr/tmp_amr folder, which contains train, dev and test three folders. Before using our Hybrid Aligner, we need the output files of [JAMR Aligner](https://github.com/jflanigan/jamr). 
 
 You can get the aligned train file simply by using the JAMR aligner:
 ```
