@@ -21,7 +21,7 @@ def parsing_options():
     parser.add_argument('--train_file', default='data/train.transitions', help='path to training file')
     parser.add_argument('--dev_file', default='data/dev.transitions', help='path to development file')
     parser.add_argument('--lemma_practs', default='data/train.txt.pb.lemmas', help='lemmas mapped to PR() operations')
-    parser.add_argument('--model', default='result', help='path to save pretrain model')
+    parser.add_argument('--model', default='result/pretrain14.model', help='path to save pretrain model')
     parser.add_argument('--load_model', type=int, default=-1, help='set to -1 if we do not have pretrained model')
     parser.add_argument('--gold_AMR_dev', default='data/amr/tmp_amr/dev/amr.txt', help='Gold AMR graph for calculating SMATCH score during dev')
 
@@ -223,7 +223,7 @@ if __name__ == '__main__':
 
     if args.load_model >= 0:
         print("loading pretrained model")
-        parser.load_model('result/pretrain14.model')
+        parser.load_model(args.model)
         pretrained_model = True
     else:
         pretrained_model = False
