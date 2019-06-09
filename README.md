@@ -83,8 +83,6 @@ Then we put three aligned files into one folder called jamr_ouput inside the dat
 
 Finally, we get four new files: train.transtions, dev.transitions, test.transitions and train.txt.pb.lemmas. train.txt.pb.lemmas is the look-up table for predicate and lemma concept (look at the paper for more details.)
 
-We also leave some AMR samples in the folders mentioned above to show the usage.
-
 ### AMR Parser
 Now we are ready for train our own AMR parser.
 #### Train a new AMR parser
