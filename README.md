@@ -4,6 +4,10 @@
 
 - [ Better Transition-Based AMR Parsing with a Refined Search Space](http://www.statnlp.org/research/sp/zhijiang18emnlp.pdf). (Zhijiang Guo and Wei Lu. EMNLP 2018)
 
+See below for an example for this transition-based AMR parser:
+
+![Parsing Example](fig/example.png "Parsing Example")
+
 ## Requirements
 
 In order to train the parser, you will need to have the following installed:

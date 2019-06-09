@@ -46,7 +46,7 @@ def parsing_options():
     parser.add_argument('--drop_out', type=float, default=0.2, help='dropout ratio')
     parser.add_argument('--unk_prob', type=float, default=0.2, help='probably with which to replace singletons with UNK in training data')
     parser.add_argument('--freq', type=int, default=1000, help='frequence of calculating the Smatch score of the dev set')
-    parser.add_argument('--best_smatch', type=float, default=0.65, help='threshold to save the model')
+    parser.add_argument('--best_smatch', type=float, default=0, help='threshold to save the model')
 
     args = parser.parse_args()
 
