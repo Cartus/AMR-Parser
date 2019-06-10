@@ -94,9 +94,9 @@ Link to the word vectors that we used in the ACL 2015 paper for English: [sskip.
 
 #### Parsing with a trained parser
 
-If you want to use a pretrained parser, just put the pretrain model under the result folder. Then run the script:
+If you want to use a pretrained parser, just put the pretrain model under the result folder. Then run the script (here we use the pretrained model for the AMR2014 corpus as an example):
 ```
-python3 train.py --load_model 1 --dev_file data/test.transitions --gold_AMR_dev data/amr/tmp_amr/test/amr.txt 
+python3 train.py --load_model 1 --model result/pretrain14.model --dev_file data/test.transitions --gold_AMR_dev data/amr/tmp_amr/test/amr.txt 
 ```
 
 ### Related Repo
