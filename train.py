@@ -99,12 +99,13 @@ def train(corpus, args, parser, gold_amr_dev):
 
     print("start pretraining the model")
 
+    ckt = 0
+
     for epoch_idx in range(20):
 
         RNG.shuffle(order)
         words = 0
         epoch_loss = 0.0
-        ckt = 0
 
         for si in range(len(order)):
 
