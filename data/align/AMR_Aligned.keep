@@ -1,0 +1,6 @@
+# establishing_0 models_1 in_2 industrial_3 innovation_4
+(e / establish-01~e.0 :arg1 (m / model~e.1 :mod (i / innovate-01~e.4 :arg1 (i2 / industry~e.3))))
+
+# after_0 its_1 competitor_2 invented_3 the_4 front_5 loading_6 washing_7 machine_8 ,_9 the_10 ceo_11 of_12 the_13 american_14 im_15 company_16 believed_17 that_18 each_19 of_20 its_21 employees_22 had_23 the_24 ability_25 for_26 innovation_27 ,_28 and_29 formulated_30 strategic_31 countermeasures_32 for_33 innovation_34 in_35 the_36 industry_37 ._38
+(a / and~e.29 :op1 (b / believe-01~e.17 :arg0 (p2 / person~e.23 :arg0-of~e.1 (h2 / have-org-role-91~e.1 :arg1 (c2 / company :name (n / name :op1 "im"~e.15) :mod (c3 / country :name (n2 / name :op1 "united"~e.1 :op2 "states"~e.25))) :arg2 (c7 / ceo~e.11))) :arg1 (c8 / capable-41~e.18 :arg1 (p / person~e.23 :arg1-of~e.14 (e / employ-01~e.22 :arg0 c2) :mod (e2 / each~e.19)) :arg2 (i / innovate-01~e.34 :arg0 p))) :op2 (f / formulate-01~e.30 :arg0 (c / ceo~e.11) :arg1 (c4 / countermeasure~e.32 :mod (s / strategy~e.31) :purpose~e.37 (i2 / innovate-01~e.27 :prep-in~e.35 (i3 / industry~e.37)))) :time~e.35 (a3 / after~e.0 :op1 (i4 / invent-01~e.3 :arg0 (c5 / company~e.16 :arg0-of~e.21 (c6 / compete-01~e.2 :arg1 c2)) :arg1 (m / machine~e.8 :arg0-of~e.1 (w / wash-01~e.7) :arg1-of~e.14 (l / load-01~e.6 :mod (f2 / front~e.5))))))
+

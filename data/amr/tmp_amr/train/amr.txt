@@ -1,0 +1,8 @@
+# ::id:0
+# ::snt Establishing Models in Industrial Innovation
+# ::save-date Wed Oct 30, 2013 ::file bolt12_07_4800_1.txt
+(e / establish-01
+  :ARG1 (m / model
+          :mod (i / innovate-01
+                 :ARG1 (i2 / industry))))
+

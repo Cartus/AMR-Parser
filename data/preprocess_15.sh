@@ -15,7 +15,7 @@ mkdir -p ${PREPROC_DIR}/dev
 mkdir -p ${PREPROC_DIR}/test
 
 # AMR2015: CONCAT ALL SEMBANKS INTO A SINGLE ONE
-cat ${ORIG_AMR_DIR}/training/deft-p2-* > ${PREPROC_DIR}/train/raw_amrs.txt
+cat ${ORIG_AMR_DIR}/train/deft-p2-* > ${PREPROC_DIR}/train/raw_amrs.txt
 cat ${ORIG_AMR_DIR}/dev/deft-p2-* > ${PREPROC_DIR}/dev/raw_amrs.txt
 cat ${ORIG_AMR_DIR}/test/deft-p2-* > ${PREPROC_DIR}/test/raw_amrs.txt
 

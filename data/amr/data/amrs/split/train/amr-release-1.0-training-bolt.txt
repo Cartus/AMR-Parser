@@ -1,0 +1,10 @@
+# AMR release; corpus: bolt; section: training; number of AMRs: 1061 (generated on Mon Jan 27, 2014 at 20:44:25)
+
+# ::id bolt12_07_4800.1 ::date 2012-12-19T12:53:14 ::annotator SDL-AMR-09 ::preferred
+# ::snt Establishing Models in Industrial Innovation
+# ::save-date Wed Oct 30, 2013 ::file bolt12_07_4800_1.txt
+(e / establish-01
+  :ARG1 (m / model
+          :mod (i / innovate-01
+                 :ARG1 (i2 / industry))))
+
