@@ -21,7 +21,7 @@ def parsing_options():
     parser.add_argument('--train_file', default='data/train.transitions', help='path to training file')
     parser.add_argument('--dev_file', default='data/dev.transitions', help='path to development file')
     parser.add_argument('--lemma_practs', default='data/train.txt.pb.lemmas', help='lemmas mapped to PR() operations')
-    parser.add_argument('--model', default='result/pretrain14.model', help='path to save pretrain model')
+    parser.add_argument('--model', default='result/pretrain15.model', help='path to save pretrain model')
     parser.add_argument('--load_model', type=int, default=-1, help='set to -1 if we do not have pretrained model')
     parser.add_argument('--gold_AMR_dev', default='data/amr/tmp_amr/dev/amr.txt', help='Gold AMR graph for calculating SMATCH score during dev')
 
@@ -85,7 +85,7 @@ def evaluation_dev(corpus, parser, best_SMATCH, e, gold_amr_dev):
     print("SMATCH score: %.4f, Precision: %.4f, Recall: %.4f" % (score_dev, precision_dev, recall_dev))
 
     if score_dev > best_SMATCH:
-         print("Saving model epoch%03d.model".format(e))
+        print("Saving model epoch{}.model".format(e))
         save_as = '%s/epoch%03d.model' % (args.model, e)
         parser.save_model(save_as)
 
@@ -166,11 +166,11 @@ def train(corpus, args, parser, gold_amr_dev):
             if e < 10:
                 if instances_processed % 5000 == 0:
                     evaluation_dev(corpus, parser, args.best_smatch, ckt, gold_amr_dev)
+                    ckt += 1
             elif e >= 10:
                 if instances_processed % args.freq == 0:
                     evaluation_dev(corpus, parser, args.best_smatch, ckt, gold_amr_dev)
-
-            ckt += 1
+                    ckt += 1
 
             if instances_processed % args.freq == 0 and instances_processed != 0:
                 print('epoch %d: per-word loss: %.6f' % (e, epoch_loss / words))
