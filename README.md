@@ -99,6 +99,9 @@ If you want to use a pretrained parser, just put the pretrain model under the re
 python3 train.py --load_model 1 --model result/pretrain14.model --dev_file data/test.transitions --gold_AMR_dev data/amr/tmp_amr/test/amr.txt 
 ```
 
+Pretrained models can be downloaded:
+[pretrain14.model](https://drive.google.com/open?id=1yZZfb7ba4o8Xx5bjozbUXABKszvVlrOd): Parser trained on AMR2014 corpus.
+
 ### Related Repo
 The code of the unsupervised aligning is adapted from this [repository](https://github.com/melanietosik/string-to-amr-alignment).
 
