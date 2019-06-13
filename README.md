@@ -100,7 +100,8 @@ python3 train.py --load_model 1 --model result/pretrain14.model --dev_file data/
 ```
 
 Pretrained models can be downloaded:
-[pretrain14.model](https://drive.google.com/open?id=1yZZfb7ba4o8Xx5bjozbUXABKszvVlrOd): Parser trained on AMR2014 corpus.
+- [pretrain14.model](https://drive.google.com/open?id=1yZZfb7ba4o8Xx5bjozbUXABKszvVlrOd): Parser trained on AMR2014 corpus.
+- [pretrain15.model](https://drive.google.com/open?id=15B94w28AWsFE3Wx9ZfiuNxbK7phqP6O_): Parser trained on AMR2015 corpus.
 
 ### Related Repo
 The code of the unsupervised aligning is adapted from this [repository](https://github.com/melanietosik/string-to-amr-alignment).
